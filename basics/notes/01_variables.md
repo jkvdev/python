@@ -85,6 +85,3 @@ greeting.count("l")     # 2
 # Repetition
 "A" * 3              # "AAA"
 ```
-
----
-```
