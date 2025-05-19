@@ -1,0 +1,71 @@
+# === PYTHON ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# === ENVIRONMENTS ===
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+env/
+
+# === IDEs / EDITORS ===
+
+# VSCode
+.vscode/
+.history/
+
+# PyCharm
+.idea/
+*.iml
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# === LOGS, CACHE, ETC. ===
+*.log
+*.tmp
+*.bak
+*.swp
+.cache/
+.mypy_cache/
+.pytest_cache/
+
+# === OS-SPECIFIC ===
+.DS_Store
+Thumbs.db
+
+# === TEST / COVERAGE ===
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# === NODE (if any frontend experiments) ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === LANGCHAIN / FASTAPI CONFIGS (safe exclusions) ===
+langchain.db/
+
+# Codespaces
+.devcontainer/
