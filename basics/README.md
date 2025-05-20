@@ -11,7 +11,7 @@ This folder contains organized notes as part of my onboarding sprint at Barkibu.
 5. [Slicing](notes/05_slicing.md)
 6. [Sets & Dictionaries](notes/06_sets_dicts.md)
 7. [Comprehensions](notes/07_comprehensions.md)
-8. [Functions & Scopes](notes/_functions.md)
+8. [Functions & Scopes](notes/08_functions.md)
 9. [Exceptions](notes/_exceptions.md)
 10. [Lambda, Map, Filter](notes/_lambdas_map_filter.md)
 11. [Strings & f-Strings](notes/_strings_fstrings.md)
