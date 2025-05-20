@@ -13,5 +13,6 @@ This folder contains organized notes as part of my onboarding sprint at Barkibu.
 7. [Comprehensions](notes/07_comprehensions.md)
 8. [Functions & Scopes](notes/08_functions.md)
 9. [Exceptions](notes/09_exceptions.md)
-10. [Lambda, Map, Filter](notes/_lambdas_map_filter.md)
-11. [Strings & f-Strings](notes/_strings_fstrings.md)
+10. [Lambda Functions](notes/10_lambdas.md)
+11. [Map, Filter](notes/_lambdas_map_filter.md)
+12. [Strings & f-Strings](notes/_strings_fstrings.md)
