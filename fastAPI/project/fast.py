@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Path
 
 app = FastAPI()
 
@@ -8,8 +8,9 @@ inventory = {
     "item3": {"name": "Tablet", "price": 600, "quantity": 7},
 }
 
+# Variable path, no more need for default value
 @app.get("/get-item/{item_id}")
-def get_item(item_id: str):
+def get_item(item_id: str = Path(description="The ID of the item you'd like to view")):
     """
     Get item details by item ID.
     """
@@ -18,3 +19,14 @@ def get_item(item_id: str):
         return {"item_id": item_id, "details": item}
     else:
         return {"error": "Item not found"}
+      
+# Query parameter
+@app.get('/get-by-name')
+def get_item(name: str):
+    """
+    Get item details by item name.
+    """
+    for item_id, item in inventory.items():
+        if item["name"].lower() == name.lower():
+            return {"item_id": item_id, "details": item}
+    return {"error": "Item not found"}
