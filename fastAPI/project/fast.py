@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Path, Query
+from fastapi import FastAPI, Path, Query, HTTPException, status
 from typing import Optional
 from pydantic import BaseModel
 
@@ -29,7 +29,8 @@ def get_item(item_id: str = Path(description="The ID of the item you'd like to v
     if item:
         return {"item_id": item_id, "details": item}
     else:
-        return {"error": "Item not found"}
+        # raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Item not found")
+        raise HTTPException(status_code=404, detail="Item not found")
       
 # Query parameter
 @app.get('/get-by-name')
@@ -41,7 +42,7 @@ def get_item(*, name: Optional[str] = None, test: int):
     for item_id, item in inventory.items():
         if item["name"].lower() == name.lower():
             return {"item_id": item_id, "details": item}
-    return {"error": "Item not found"}
+    raise HTTPException(status_code=404, detail="Item not found")
   
 # http://localhost:8000/get-by-name?name=smartphone
 # http://localhost:8000/get-by-name?test=1&name=smartphone
@@ -56,12 +57,12 @@ def get_item(item_id: str, test: int, name: Optional[str] = None):
     if item:
         return {"item_id": item_id, "details": item}
     else:
-        return {"error": "Item not found"}
+        raise HTTPException(status_code=404, detail="Item not found")
 
 @app.post("/create-item/{item_id}")
 def create_item(item_id: str, item: Item):
     if item_id in inventory:
-        return {"error": "Item already exists"}
+        raise HTTPException(status_code=400, detail="Item already exists")
     inventory[item_id] = {"name": item.name, "price": item.price, "quantity": item.quantity}
     return inventory[item_id]
     
@@ -81,7 +82,7 @@ def create_item(item_id: str, item: Item):
 @app.put("/update-item/{item_id}")
 def update_item(item_id: str, item: UpdateItem):
     if item_id not in inventory:
-        return {"error": "Item not found"}
+        raise HTTPException(status_code=404, detail="Item not found")
     inventory[item_id].update(item)
     return inventory[item_id]
 
@@ -89,6 +90,6 @@ def update_item(item_id: str, item: UpdateItem):
 @app.delete("/delete-item/")
 def delete_item(item_id: str = Query(..., description="The ID of the item you'd like to delete")):
     if item_id not in inventory:
-        return {"error": "Item not found"}
+        raise HTTPException(status_code=404, detail="Item not found")
     del inventory[item_id]
     return {"message": "Item deleted successfully"}
