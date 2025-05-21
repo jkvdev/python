@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Path, Query
+from fastapi import FastAPI, Path
 from typing import Optional
 from pydantic import BaseModel
 
@@ -84,11 +84,3 @@ def update_item(item_id: str, item: UpdateItem):
         return {"error": "Item not found"}
     inventory[item_id].update(item)
     return inventory[item_id]
-
-
-@app.delete("/delete-item/")
-def delete_item(item_id: str = Query(..., description="The ID of the item you'd like to delete")):
-    if item_id not in inventory:
-        return {"error": "Item not found"}
-    del inventory[item_id]
-    return {"message": "Item deleted successfully"}
