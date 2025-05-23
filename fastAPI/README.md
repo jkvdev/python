@@ -159,15 +159,21 @@ Then open your browser to:
 
 ---
 
-## 📚 Additional Notes
+## 📚 Additional Learning Docs
 
-For concept-level explanations, refer to the `learning_notes/` folder. It contains individual tutorials on:
+Concept-level tutorials and explanations can be found in the [`docs/`](./docs) folder:
 
-* Path vs Query parameters
-* Pydantic model features
-* Handling partial updates
-* Error handling with `HTTPException`
-* Project structure and modular design
+1. [FastAPI Overview](./docs/01_fastapi_overview.md)
+2. [Installation and Setup](./docs/02_installation_and_setup.md)
+3. [Defining Endpoints](./docs/03_defining_endpoints.md)
+4. [HTTP Methods: GET, POST, PUT, DELETE](./docs/04_http_methods_get_post_put_delete.md)
+5. [Path vs Query Parameters](./docs/05_path_vs_query_params.md)
+6. [Async and Await](./docs/06_async_and_await.md)
+7. [Modularization and Routers](./docs/07_modularization_and_routers.md)
+8. [Pydantic Models (coming soon)](./docs/08_pydantic_models.md)
+9. [HTTPException error handling (coming soon)](./docs/09_http_exceptions.md)
+
+> These tutorials are beginner-friendly and include annotated code snippets that explain key FastAPI and Pydantic concepts.
 
 ---
 
