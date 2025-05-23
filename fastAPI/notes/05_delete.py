@@ -70,8 +70,8 @@ def create_item(item_id: str, item: Item):
 def update_item(item_id: str, item: UpdateItem):
     if item_id not in inventory:
         raise HTTPException(status_code=404, detail="Item not found")
-    stored_item_data = inventory[item_id].dict()
-    update_data = item.dict(exclude_unset=True)
+    stored_item_data = inventory[item_id].model_dump()
+    update_data = item.model_dump(exclude_unset=True)
     updated_item = Item(**stored_item_data, **update_data)
     inventory[item_id] = updated_item
     return updated_item

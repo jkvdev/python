@@ -1,46 +1,55 @@
-from fastapi import FastAPI, Path, Query, HTTPException
+from fastapi import FastAPI, Path, Query, HTTPException, status
 from typing import Optional, Dict
-from pydantic import BaseModel
-
+from pydantic import BaseModel, Field
 
 app = FastAPI()
 
-
+# --------------------
 # Data Models
+# --------------------
+
 class Item(BaseModel):
     name: str
-    price: float
-    quantity: int
-
+    price: float = Field(..., gt=0, description="Price must be greater than 0")
+    quantity: int = Field(..., ge=0, description="Quantity must be 0 or more")
 
 class UpdateItem(BaseModel):
     name: Optional[str] = None
-    price: Optional[float] = None
-    quantity: Optional[int] = None
+    price: Optional[float] = Field(None, gt=0)
+    quantity: Optional[int] = Field(None, ge=0)
 
-
+# --------------------
 # Response Models
+# --------------------
+
 class ItemResponse(BaseModel):
     item_id: str
     details: Item
 
-
 class ItemResponseWithTest(ItemResponse):
     test: Optional[int] = None
-
 
 class UpdatedItemResponse(BaseModel):
     item_id: str
     updated: Item
 
+class DeleteItemResponse(BaseModel):
+    message: str
+    item_id: str
 
+# --------------------
 # Inventory Storage
+# --------------------
+
 inventory: Dict[str, Item] = {
     "item1": Item(name="Laptop", price=1200, quantity=5),
     "item2": Item(name="Smartphone", price=800, quantity=10),
     "item3": Item(name="Tablet", price=600, quantity=7),
 }
 
+# --------------------
+# Routes
+# --------------------
 
 @app.get(
     "/get-item/{item_id}",
@@ -56,7 +65,6 @@ def get_item(item_id: str = Path(..., description="The ID of the item you'd like
     if not item:
         raise HTTPException(status_code=404, detail="Item not found")
     return ItemResponse(item_id=item_id, details=item)
-
 
 @app.get(
     "/get-by-name",
@@ -78,7 +86,6 @@ def get_item_by_name(
         if item.name.lower() == name.lower():
             return ItemResponseWithTest(item_id=item_id, details=item, test=test)
     raise HTTPException(status_code=404, detail="Item not found")
-
 
 @app.get(
     "/get-item-combined/{item_id}",
@@ -103,7 +110,6 @@ def get_item_combined(
 
     return ItemResponseWithTest(item_id=item_id, details=item, test=test)
 
-
 @app.post(
     "/create-item/{item_id}",
     summary="Create a new item",
@@ -118,7 +124,6 @@ def create_item(item_id: str, item: Item) -> ItemResponse:
         raise HTTPException(status_code=400, detail="Item already exists")
     inventory[item_id] = item
     return ItemResponse(item_id=item_id, details=item)
-
 
 @app.put(
     "/update-item/{item_id}",
@@ -136,6 +141,23 @@ def update_item(item_id: str, item: UpdateItem) -> UpdatedItemResponse:
 
     updated_data = item.model_dump(exclude_unset=True)
     updated_item = existing_item.model_copy(update=updated_data)
-    inventory[item_id] = updated_item
 
+    inventory[item_id] = updated_item
     return UpdatedItemResponse(item_id=item_id, updated=updated_item)
+
+@app.delete(
+    "/delete-item/{item_id}",
+    summary="Delete an item",
+    response_description="Confirmation of deleted item",
+    response_model=DeleteItemResponse,
+    status_code=status.HTTP_200_OK
+)
+def delete_item(item_id: str = Path(..., description="The ID of the item to delete")) -> DeleteItemResponse:
+    """
+    Delete an item from the inventory by ID.
+    """
+    if item_id not in inventory:
+        raise HTTPException(status_code=404, detail="Item not found")
+
+    del inventory[item_id]
+    return DeleteItemResponse(message="Item deleted successfully", item_id=item_id)
