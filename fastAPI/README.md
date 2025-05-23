@@ -1,54 +1,179 @@
-# FastAPI Onboarding Project
+# ✨ 05 FastAPI Inventory Management API - Detailed Documentation
 
-This repository documents my learning journey with FastAPI as part of my onboarding at Barkibu. The goal is to build a small, functional FastAPI application while capturing key concepts and best practices along the way.
+## 📦 Overview
 
----
+This FastAPI application manages an inventory of items. It provides endpoints to:
 
-## Project Overview
+* Retrieve items by ID or name
+* Create new items
+* Update existing items
+* Delete items
 
-The project is divided into three main parts:
-
-- **General README (this file):** Explains the project goals, structure, and how to get started.
-- **Notes folder (`/notes`):** A collection of detailed markdown notes covering FastAPI concepts, design decisions, and useful references.
-- **Project folder (`/project`):** Contains the actual FastAPI application code, including API endpoints, models, schemas, and tests.
-
----
-
-## Objectives
-
-- Gain hands-on experience with FastAPI fundamentals: routing, validation, dependency injection, error handling.
-- Explore FastAPI features such as automatic API docs, request/response models, and background tasks.
-- Practice writing clean, modular, and testable code.
-- Create clear documentation to explain concepts and decisions for future reference.
-- Build confidence in deploying and maintaining Python web APIs.
+The code is structured using **Pydantic models** for data validation, **FastAPI's path and query parameters**, and clean **exception handling** to build a reliable, well-documented API.
 
 ---
 
-## Getting Started
+## 📐 1. Data Models
 
-1. Set up a Python virtual environment.
-2. Install dependencies listed in `project/requirements.txt`.
-3. Run the FastAPI development server using Uvicorn.
-4. Explore the API via Swagger UI at `/docs`.
-5. Review notes in the `/notes` folder for detailed explanations.
-6. Extend the API and update notes accordingly.
+### `Item`
 
----
+Defines a complete inventory item with required fields:
 
-## Future Enhancements
+```python
+name: str
+price: float
+quantity: int
+```
 
-- Add authentication and authorization.
-- Implement database integration.
-- Include more comprehensive testing strategies.
-- Document advanced FastAPI features and performance tuning.
+### `UpdateItem`
+
+Used for partial updates (all fields are optional). Clients can send only the fields they want to change.
 
 ---
 
-## Feedback and Contributions
+## 🗃 2. Inventory Storage
 
-Feedback is welcome to improve both the code and documentation. Contributions will help deepen understanding and create a better resource for the Barkibu team.
+The inventory is a simple **in-memory dictionary**:
+
+```python
+inventory: Dict[str, Item]
+```
+
+* ✅ Type-safe and schema-validated using Pydantic
+* 🔄 Easily copy/update models using `.model_copy()` and `.model_dump()`
+* 🧪 Great for learning and testing without needing a database
 
 ---
 
-Thank you for following my FastAPI onboarding journey!
+## 🛠 3. API Endpoints
+
+### ✅ `GET /get-item/{item_id}`
+
+* **Purpose:** Retrieve an item by ID
+* **Params:** `item_id` (path)
+* **Returns:** `ItemResponse`
+* **Errors:** `404` if item not found
+
+---
+
+### 🔍 `GET /get-by-name`
+
+* **Purpose:** Retrieve item by name
+* **Params:**
+
+  * `name` (query, required)
+  * `test` (query, optional)
+* **Behavior:** Case-insensitive match
+* **Errors:** `400` if no name given, `404` if item not found
+
+---
+
+### 🔀 `GET /get-item-combined/{item_id}`
+
+* **Purpose:** Retrieve item by ID and optionally verify name
+* **Params:**
+
+  * `item_id` (path)
+  * `name` (query, optional)
+  * `test` (query, optional)
+* **Behavior:** Returns item only if name matches (if provided)
+
+---
+
+### ➕ `POST /create-item/{item_id}`
+
+* **Purpose:** Create a new item
+* **Params:**
+
+  * `item_id` (path)
+  * `Item` (body)
+* **Behavior:** Adds new item to inventory
+* **Errors:** `400` if item already exists
+
+---
+
+### 🔁 `PUT /update-item/{item_id}`
+
+* **Purpose:** Update existing item (partial update)
+* **Params:**
+
+  * `item_id` (path)
+  * `UpdateItem` (body)
+* **Behavior:**
+
+  * Uses `.model_dump(exclude_unset=True)` to extract only provided fields
+  * Updates model with `.model_copy(update=...)`
+* **Errors:** `404` if item not found
+
+---
+
+### ❌ `DELETE /delete-item/{item_id}`
+
+* **Purpose:** Delete an item by ID
+* **Params:** `item_id` (path)
+* **Returns:** Confirmation message
+* **Errors:** `404` if item does not exist
+
+---
+
+## 🧠 4. Key Concepts Demonstrated
+
+### 🔸 Path & Query Parameters
+
+Use of `Path()` and `Query()` provides built-in validation and automatic docs via Swagger UI.
+
+### 🔸 HTTPException Handling
+
+Returns appropriate `404` or `400` errors with meaningful messages for invalid input or missing items.
+
+### 🔸 Pydantic Utilities
+
+* `.model_dump(exclude_unset=True)` for extracting only the fields sent by the client
+* `.model_copy(update=...)` to create updated model instances safely
+
+---
+
+## ✅ 5. Design Benefits
+
+* **Modular & Readable**: Each concept is clearly separated
+* **Type-Safe**: Strong typing via Pydantic reduces runtime bugs
+* **Beginner-Friendly**: Easy to understand and extend
+* **Auto-Documented**: Every route is described and visible in FastAPI’s built-in Swagger UI
+* **Clean Update Logic**: Avoids mutation and overwriting with `None`
+
+---
+
+## 🚀 How to Run Locally
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
+python run.py
+```
+
+Then open your browser to:
+👉 [http://localhost:8000/docs](http://localhost:8000/docs) – Interactive Swagger UI
+👉 [http://localhost:8000/redoc](http://localhost:8000/redoc) – Redoc-style documentation
+
+---
+
+## 📚 Additional Notes
+
+For concept-level explanations, refer to the `learning_notes/` folder. It contains individual tutorials on:
+
+* Path vs Query parameters
+* Pydantic model features
+* Handling partial updates
+* Error handling with `HTTPException`
+* Project structure and modular design
+
+---
+
+## 🧠 Summary
+
+This API project combines **clarity, structure, and best practices** for learning and demonstrating FastAPI fundamentals. It's an ideal starting point for building more complex APIs or integrating features like authentication, databases, or LangChain.
+
+---
 
