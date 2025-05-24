@@ -166,7 +166,7 @@ FastAPI will handle nested validation automatically.
 
 ## 🧠 Final Tip
 
-Pydantic isn’t just for FastAPI — it's a general-purpose validation tool. But FastAPI makes it shine by:
+Pydantic isn't just for FastAPI — it's a general-purpose validation tool. But FastAPI makes it shine by:
 
 * Autogenerating docs
 * Validating request and response bodies

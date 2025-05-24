@@ -5,13 +5,13 @@
 ## 📚 Topics Covered
 
 - ✅ Python Fundamentals (done)
-- ⚒️ FastAPI (in progress)
+- ✅ FastAPI (done)
 - ⚒️ LangChain (in progress)
-- ⚒️ Clean Code Principles (under review)
-- 🚧 Software Design Patterns (to-do)
-- 🚧 Software Architecture (to-do)
+- ⚒️ Clean Code Principles (in progress)
+- 🔍 Software Design Patterns (under review)
+- 🔍 Software Architecture (under review)
 
-_✅ Completed | ⚒️ In Progress | 🚧 To-Do_
+_✅ Completed | ⚒️ In Progress | 🔍 Under Review | 🚧 To-Do_
 
 ---
 
@@ -22,6 +22,8 @@ Each folder contains markdown notes and small projects reflecting what I’ve st
 ---
 
 ## 📆 Daily Progress Log
+
+**TODO: ADD Log for May 23 and May 24**
 
 **May 22, 2025**
 - Reviewed LangChain and took handwritten notes.  
