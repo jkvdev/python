@@ -112,5 +112,4 @@ class OrderProcessor:
 
 > *Clean architecture isn't about frameworks — it's about decoupling and clarity.*
 
----
 

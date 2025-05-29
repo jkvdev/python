@@ -83,5 +83,5 @@ def disconnect():
 
 ## ✨ Rule of Thumb
 
-> Code should read like well-written prose. If you have to explain what a name means, it likely needs to be clearer.
+> *Code should read like well-written prose. If you have to explain what a name means, it likely needs to be clearer.*
 
