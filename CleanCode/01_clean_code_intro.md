@@ -14,14 +14,14 @@ Clean code is code that is easy to understand and easy to change.
 
 ## ✨ Characteristics
 
-- Descriptive naming  
-- Small functions  
-- Clear responsibility  
-- Minimal dependencies  
-- Follows consistent formatting  
+- Descriptive naming
+- Small functions
+- Clear responsibility
+- Minimal dependencies
+- Follows consistent formatting
 - Contains meaningful comments only when necessary
 
-> "Clean code always looks like it was written by someone who cares." – Robert C. Martin
+> "Clean code always looks like it was written by someone who cares." - Robert C. Martin
 
 ---
 
@@ -37,6 +37,7 @@ Clean code is code that is easy to understand and easy to change.
 ## 💥 Example: Clean vs Dirty Code
 
 **Dirty Code:**
+
 ```python
 def d(x): return x*9/5+32
 ```
@@ -48,4 +49,3 @@ def celsius_to_fahrenheit(celsius: float) -> float:
     """Convert Celsius temperature to Fahrenheit."""
     return celsius * 9 / 5 + 32
 ```
-

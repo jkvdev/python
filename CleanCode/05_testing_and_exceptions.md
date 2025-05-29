@@ -89,5 +89,4 @@ except InventoryServiceUnavailable as e:
 
 ---
 
-> *Tests and exceptions are first-class citizens of clean code. Write them as if they will be read more than the actual implementation.*
-
+> _Tests and exceptions are first-class citizens of clean code. Write them as if they will be read more than the actual implementation._

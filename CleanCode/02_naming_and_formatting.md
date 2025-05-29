@@ -9,6 +9,7 @@ Good naming and consistent formatting are foundational elements of clean code. T
 Use **descriptive**, **unambiguous**, and **intent-revealing** names.
 
 ### Bad Example:
+
 ```python
 a = 10
 b = 20
@@ -43,7 +44,7 @@ Use consistent indentation, line spacing, and blank lines to improve readability
 
 ### Indentation
 
-* Use 4 spaces per indent level (PEP 8 default for Python).
+- Use 4 spaces per indent level (PEP 8 default for Python).
 
 ```python
 def greet(name):
@@ -53,7 +54,7 @@ def greet(name):
 
 ### Spacing
 
-* Add space around operators and after commas.
+- Add space around operators and after commas.
 
 ```python
 # Bad
@@ -83,5 +84,4 @@ def disconnect():
 
 ## ✨ Rule of Thumb
 
-> *Code should read like well-written prose. If you have to explain what a name means, it likely needs to be clearer.*
-
+> _Code should read like well-written prose. If you have to explain what a name means, it likely needs to be clearer._
