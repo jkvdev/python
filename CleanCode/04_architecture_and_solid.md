@@ -12,7 +12,8 @@ Software architecture refers to how your codebase is structured and how componen
 
 ## 🧭 The SOLID Principles
 
-#### 1. S – Single Responsibility Principle (SRP)
+#### 1. S - Single Responsibility Principle (SRP)
+
 A class should have only one reason to change.
 
 ```python
@@ -30,7 +31,7 @@ class ReportSaver: ...
 
 ---
 
-#### 2. O – Open/Closed Principle
+#### 2. O - Open/Closed Principle
 
 Software entities should be open for extension but closed for modification.
 
@@ -51,7 +52,7 @@ class Circle(Shape):
 
 ---
 
-#### 3. L – Liskov Substitution Principle
+#### 3. L - Liskov Substitution Principle
 
 Subtypes must be substitutable for their base types without altering correctness.
 
@@ -67,7 +68,7 @@ class Duck(Bird):
 
 ---
 
-#### 4. I – Interface Segregation Principle
+#### 4. I - Interface Segregation Principle
 
 Don't force clients to depend on methods they don’t use.
 
@@ -84,7 +85,7 @@ class Eatable: def eat(self): ...
 
 ---
 
-#### 5. D – Dependency Inversion Principle
+#### 5. D - Dependency Inversion Principle
 
 Depend on abstractions, not on concretions.
 
@@ -110,6 +111,4 @@ class OrderProcessor:
 
 ---
 
-> *Clean architecture isn't about frameworks — it's about decoupling and clarity.*
-
-
+> _Clean architecture isn't about frameworks — it's about decoupling and clarity._

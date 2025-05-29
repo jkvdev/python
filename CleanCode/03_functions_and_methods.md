@@ -9,6 +9,7 @@ Functions are the building blocks of clean code. Keeping them small and purposef
 Each function should do **one thing only**, and do it well.
 
 #### Bad:
+
 ```python
 def process_data(data):
     # validate
@@ -46,7 +47,7 @@ def process_data(data):
 
 ### 📉 2. Fewer Arguments Is Better
 
-Prefer 0–2 arguments. More than 3 usually indicates the need for refactoring or grouping into a data structure.
+Prefer 0-2 arguments. More than 3 usually indicates the need for refactoring or grouping into a data structure.
 
 ```python
 # Prefer
@@ -90,10 +91,8 @@ def add_user(users, user):
 
 ### 🧹 5. Single Responsibility
 
-Each function should have **a single reason to change**. Don’t mix concerns like UI, database, and business logic in one place.
+Each function should have **a single reason to change**. Don't mix concerns like UI, database, and business logic in one place.
 
 ---
 
-> ***Remember**: Short, well-named functions are easier to read, reuse, and test.*
-
-
+> **\*Remember**: Short, well-named functions are easier to read, reuse, and test.\*

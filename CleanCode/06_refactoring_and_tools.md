@@ -7,6 +7,7 @@ Refactoring is the process of improving code structure without changing its beha
 ## 🔍 When to Refactor?
 
 Look out for **code smells**:
+
 - Duplicate code
 - Long functions
 - Large classes
@@ -45,8 +46,8 @@ def is_valid(password: str) -> bool:
 
 ### **Formatters**
 
-* `black` - Automatically formats Python code.
-* `autopep8` - Applies PEP 8 formatting standards.
+- `black` - Automatically formats Python code.
+- `autopep8` - Applies PEP 8 formatting standards.
 
 ```bash
 black app/
@@ -56,7 +57,7 @@ black app/
 
 ### **Linters**
 
-* `flake8`, `ruff` - Check code for potential issues.
+- `flake8`, `ruff` - Check code for potential issues.
 
 ```bash
 ruff check .  # Fast and modern alternative to flake8
@@ -66,7 +67,7 @@ ruff check .  # Fast and modern alternative to flake8
 
 ### **Type Checkers**
 
-* `mypy` - Static type checker for Python.
+- `mypy` - Static type checker for Python.
 
 ```bash
 mypy src/
@@ -76,11 +77,10 @@ mypy src/
 
 ### **Other Helpers**
 
-* `pylint` - More opinionated linter.
-* `isort` - Sorts imports consistently.
-* IDE tools like PyCharm or VSCode can suggest real-time improvements.
+- `pylint` - More opinionated linter.
+- `isort` - Sorts imports consistently.
+- IDE tools like PyCharm or VSCode can suggest real-time improvements.
 
 ---
 
-> *Refactoring isn't about perfection — it's about **continuous improvement**.*
-
+> _Refactoring isn't about perfection — it's about **continuous improvement**._
