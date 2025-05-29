@@ -86,22 +86,23 @@ print(response)  # e.g., 0 or 2
 ---
 
 ## 🚀 Benefits of LCEL
-| Feature       | Benefit                          |
-|---------------|----------------------------------|
-| `|` pipe syntax | Clean, modular pipelines        |
-| `.invoke()`   | Run synchronously                |
-| `.stream()`   | Stream token-by-token            |
-| `.batch()`    | Process multiple inputs          |
-| Composability | Easy to swap or reuse components |
+
+| Feature          | Benefit                          |
+| ---------------- | -------------------------------- |
+| `\|` pipe syntax | Clean, modular pipelines         |
+| `.invoke()`      | Run synchronously                |
+| `.stream()`      | Stream token-by-token            |
+| `.batch()`       | Process multiple inputs          |
+| Composability    | Easy to swap or reuse components |
 
 ---
 
 ## ✅ Summary
 
-* LCEL uses `|` to compose LangChain objects
-* You can connect: `Prompt | Model | Parser`
-* `.invoke()` triggers the whole pipeline
-* Cleaner than managing each step manually
+- LCEL uses `|` to compose LangChain objects
+- You can connect: `Prompt | Model | Parser`
+- `.invoke()` triggers the whole pipeline
+- Cleaner than managing each step manually
 
 ---
 
@@ -117,6 +118,6 @@ This lets you fix certain variables ahead of time, while still allowing others t
 
 ---
 
-## 🧭 What’s Next?
+## 🧭 What's Next?
 
-Next up, learn how to **structure and clean the model outputs** using [06_output_parsers.md](./06_output_parsers.md), where you’ll use `StrOutputParser`, custom classes, and structured output parsing.
+Next up, learn how to **structure and clean the model outputs** using [06_output_parsers.md](./06_output_parsers.md), where you'll use `StrOutputParser`, custom classes, and structured output parsing.
