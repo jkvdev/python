@@ -66,6 +66,6 @@ LangChain promotes the **composition of logic** via chains and tools. Unlike tra
 
 ---
 
-## 🚀 What’s Next?
+## 🚀 What's Next?
 
 👉 Continue to [02_installation_and_setup.md](./02_installation_and_setup.md) for setting up your environment and tools.
