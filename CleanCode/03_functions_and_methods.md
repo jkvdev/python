@@ -94,7 +94,6 @@ Each function should have **a single reason to change**. Don’t mix concerns li
 
 ---
 
-> **Remember**: Short, well-named functions are easier to read, reuse, and test.
+> ***Remember**: Short, well-named functions are easier to read, reuse, and test.*
 
----
 
