@@ -68,6 +68,9 @@ This documentation helps you progress from **zero to deployment**, even if you'r
 
 - Turning your chains or agents into real-time APIs using FastAPI and `uvicorn`
 
+#### [16 - Embeddings and Vectorstores](./16_embeddings_and_vectorstores.md)
+- How to convert text into vectors and use vectorstores like Chroma for retrieval
+
 ---
 
 ## 🚀 How to Use This Folder
@@ -91,3 +94,5 @@ This documentation helps you progress from **zero to deployment**, even if you'r
 Found a bug or want to contribute? Fork and PR welcome!
 
 Happy learning and building! 💡
+
+> 📌 New: Check out [16_embeddings_and_vectorstores.md](./16_embeddings_and_vectorstores.md) to explore how semantic search works under the hood!
