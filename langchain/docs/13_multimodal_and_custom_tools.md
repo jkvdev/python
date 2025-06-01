@@ -62,7 +62,7 @@ tools = [calculate_area]
 
 Agents will now be able to call this when reasoning through tasks like:
 
-> “What’s the area of a rectangle that’s 5m long and 2m wide?”
+> "What's the area of a rectangle that's 5m long and 2m wide?"
 
 ---
 
@@ -103,7 +103,7 @@ def get_weather(city: str) -> str:
 
 ## 🧠 Agents Can Use These Tools
 
-Include your tools in an agent’s toolset using:
+Include your tools in an agent's toolset using:
 
 ```python
 from langchain.agents import initialize_agent, AgentType
@@ -127,7 +127,7 @@ agent = initialize_agent(
 
 ---
 
-## 🧭 What’s Next?
+## 🧭 What's Next?
 
-In [14\_langgraph.md](./14_langgraph.md), you’ll explore **LangGraph**, an optional but powerful extension to model complex logic flows using a node-based, state-machine architecture.
+In [14_langgraph.md](./14_langgraph.md), you'll explore **LangGraph**, an optional but powerful extension to model complex logic flows using a node-based, state-machine architecture.
 
