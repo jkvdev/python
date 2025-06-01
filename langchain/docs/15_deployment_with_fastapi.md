@@ -125,3 +125,5 @@ You now understand:
 * How to deploy your LLM logic into real-world applications
 
 Keep going with your journey and remember that devs never stop learning! 
+
+> 📌 **Bonus:** For a deep dive into embeddings and how vectorstores really work, check out [16_embeddings_and_vectorstores.md](./16_embeddings_and_vectorstores.md)
