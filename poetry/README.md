@@ -44,7 +44,7 @@ Replace `<YourUsername>` with your actual Windows username.
 
 ---
 
-### 🐧 Linux / 🖥 macOS
+### 🐧 Linux / 💻 macOS
 
 Use this command:
 
