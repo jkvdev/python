@@ -1,4 +1,4 @@
-# 🧠 01 — Writing Effective Prompts in Cursor
+# 🤖 01 — Writing Effective Prompts in Cursor
 
 Cursor works best when you talk to it like a developer assistant. Here are the most useful types of prompts to use:
 
