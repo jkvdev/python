@@ -6,8 +6,8 @@
 
 - ✅ Python Fundamentals (done)
 - ✅ FastAPI (done)
-- ⚒️ LangChain (in progress)
-- ⚒️ Clean Code Principles (in progress)
+- ✅ LangChain (done)
+- ✅ Clean Code Principles (done)
 - 🔍 Software Design Patterns (under review)
 - 🔍 Software Architecture (under review)
 
