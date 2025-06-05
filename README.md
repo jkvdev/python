@@ -4,21 +4,21 @@
 
 ## 📚 Topics Overview
 
-| Topic                    | Status          | Notes                              |
-| ------------------------ | --------------- | ---------------------------------- |
-| Python Fundamentals      | ✅ Completed     | Fully documented                   |
-| FastAPI                  | ✅ Completed     | Fully documented                   |
-| LangChain                | ✅ Completed     | Fully documented                   |
-| Clean Code Principles    | ✅ Completed     | Fully documented                   |
-| Cursor AI                | ✅ Completed     | Fully documented                   |
-| Ruff                     | ✅ Completed     | Concise notes created              |
-| Poetry                   | ✅ Completed     | Intermediate-level covered         |
-| Python OOP               | ⚒️ In Progress  | About 50% done                     |
-| Python venv              | ⚒️ In Progress  | 50% covered, examples in progress  |
-| Docker                   | 🔍 Under Review | \~25–50% done, under active review |
-| Software Design Patterns | 🔍 Under Review | Taking notes                       |
-| Software Architecture    | 🔍 Under Review | Exploring general concepts         |
-| SQLAlchemy               | 🔍 Under Review | Reviewed usage within the project  |
+| Topic                  | Status          | Notes                                                                                 |
+|------------------------|----------------|----------------------------------------------------------------------------------------|
+| Python Fundamentals    | ✅ Completed    | Fully documented                                                                       |
+| Python OOP             | ⚒️ In Progress | About 50% done                                                                         |
+| Python venv            | ⚒️ In Progress | 50% covered, examples in progress                                                      |
+| Poetry                 | ✅ Completed    | Intermediate-level covered                                                             |
+| Ruff                   | ✅ Completed    | Concise notes created                                                                  |
+| FastAPI                | ✅ Completed    | Fully documented                                                                       |
+| LangChain              | ✅ Completed    | Fully documented                                                                       |
+| SQLAlchemy             | 🔍 Under Review | Reviewed usage within the project                                                      |
+| Clean Code Principles  | ✅ Completed    | Fully documented                                                                       |
+| Software Design Patterns | 🔍 Under Review | Covered major types: Factory, Strategy, Repository                                  |
+| Software Architecture  | 🔍 Under Review | ✅ DDD<br>✅ DI<br>✅ Hexagonal<br>🔍 Clean Architecture<br>🔍 Event-Driven<br>🔍 Patterns |
+| Docker                 | 🔍 Under Review | \~25–50% done, under active review                                                     |
+| Cursor AI              | ✅ Completed    | Fully documented                                                                       |
 
 *✅ Completed | ⚒️ In Progress | 🔍 Under Review | 🚧 To-Do*
 
