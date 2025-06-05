@@ -31,18 +31,18 @@ Hexagonal architecture solves this by **inverting dependencies** and organizing 
 ## 🔌 A Visual Overview
 
 ```mermaid
-flowchart TD
-    A[UI / CLI / FastAPI] --> B[Primary Adapter]
-    B --> C[Input Port]
-    C --> D[Application Service]
-    D --> E[Output Port]
-    E --> F[Secondary Adapter (DB, APIs, Email, etc.)]
+    flowchart TD
+        A[UI / CLI / FastAPI] --> B[Primary Adapter]
+        B --> C[Input Port]
+        C --> D[Application Service]
+        D --> E[Output Port]
+        E --> F[Secondary Adapter: DB & APIs]
 
-    subgraph Hexagon
-        C
-        D
-        E
-    end
+        subgraph Hexagon
+            C
+            D
+            E
+        end
 ```
 
 ---
