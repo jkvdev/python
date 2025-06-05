@@ -71,9 +71,3 @@ print(total)  # Money(amount=100.0, currency='USD')
 
 ➡️ Next: [03_aggregates.md](./03_aggregates.md)
 
-```
-
----
-
-Let me know when you're ready to move on to `03_aggregates.md` — we'll keep the same quality and structure going.
-```
