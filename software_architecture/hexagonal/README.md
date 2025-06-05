@@ -36,7 +36,9 @@ Hexagonal architecture solves this by **inverting dependencies** and organizing 
         B --> C[Input Port]
         C --> D[Application Service]
         D --> E[Output Port]
-        E --> F[Secondary Adapter: DB & APIs]
+        E --> F[Secondary Adapter]
+        G(Pure domain logic) -.-> D
+        H(e.g., DB, Email, APIs) -.-> F
 
         subgraph Hexagon
             C
