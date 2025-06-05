@@ -128,6 +128,6 @@ mock_service.send_email.assert_called_once_with("test@example.com", "You have a 
 
 👉 Continue learning:
 
-* [Constructor Injection](./01_constructor_injection.md)
-* [Service Locator](./02_service_locator.md)
-* [IoC Containers](./03_IoC_container.md)
+* [01 - Constructor Injection](./01_constructor_injection.md)
+* [02 - Service Locator](./02_service_locator.md)
+* [03 - IoC Containers](./03_IoC_container.md)
