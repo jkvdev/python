@@ -82,11 +82,5 @@ print(user1 == duplicate)  # True – same ID, considered the same entity
 * Their **identity** is more important than their attributes
 * They encapsulate **domain behavior** and not just data
 
-➡️ Next: [02\_value\_objects.md](./02_value_objects.md)
+➡️ Next: [02_value_objects.md](./02_value_objects.md)
 
-```
-
----
-
-Let me know when you're ready to move on to `02_value_objects.md` — I’ll prepare it with the same level of clarity and clean code.
-```
